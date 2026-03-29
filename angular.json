@@ -65,7 +65,8 @@
               "namedChunks": true
             },
             "github-pages": {
-              "baseHref": "/Multi-Face/",
+              "outputPath": "docs",
+              "baseHref": "/multi-hub/",
               "budgets": [
                 {
                   "type": "initial",
