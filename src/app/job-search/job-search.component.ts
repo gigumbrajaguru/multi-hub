@@ -7,22 +7,23 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class JobSearchComponent implements OnInit {
 
-  @Output() eventClicked = new EventEmitter<Event>();
-  tags: any[];
-  jobdata: { [name: string]: string };
+  @Output() eventClicked = new EventEmitter<any>();
+  tags: string[];
   results: any[];
+
   constructor() {
     this.tags = [];
     this.results = [];
-    this.jobdata = {};
   }
 
   ngOnInit(): void {
-    this.tags = ["One", "Two"];
-    this.jobdata = {"job_title": "Software Engineer"};
-
-    this.results = [{"job_title": "Software Engineer"}, {"job_title": "Software Developer"}];
-
+    this.tags = ['Python', 'Remote', 'Full-Time', 'Machine Learning', 'Backend', 'Finance'];
+    this.results = [
+      { job_title: 'Senior Python Developer', location: 'London, UK', salary: '£65k–£80k', type: 'Full-Time', date: '2 days ago', category: 'Engineering' },
+      { job_title: 'ML Engineer', location: 'Remote', salary: '$90–$120/hr', type: 'Contract', date: '1 day ago', category: 'AI / ML' },
+      { job_title: 'Data Scientist', location: 'Berlin, DE', salary: '€70k', type: 'Full-Time', date: '3 days ago', category: 'Data' },
+      { job_title: 'Backend Developer', location: 'Amsterdam, NL', salary: '€60k–€75k', type: 'Full-Time', date: '5 days ago', category: 'Engineering' },
+    ];
   }
 
   onClickEvent(event: any) {
