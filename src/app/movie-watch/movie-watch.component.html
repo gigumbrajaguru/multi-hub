@@ -2,27 +2,21 @@
 <div id="search-wrap" class="wrap-top search-wrap">
   <div class="width-search-box">
     <ul class="clearfix">
-      <li ><i class="fa fa-search"></i> <input type='search' [(ngModel)]="search_id" placeholder="Search Movie or TV Series"></li>
+      <li><i class="fa fa-search"></i> <input type='search' [(ngModel)]="search_id" placeholder="Search Movie or TV Series…"></li>
       <li id="li-3" (click)="searchMovie(search_id)"> <i class="fa fa-search"></i> </li>
       <li id="li-4"> <i class="fa fa-times"></i> </li>
     </ul>
-    <input id="cv_box" type='file' style="display: none;">
   </div>
 </div>
+
 <div id="search-results-box">
   <div *ngFor="let result of searchresults" class="looper">
     <div class="clear-elements">
       <div class="row">
-        <div class="movie-title">
-          {{result.title}}
-        </div>
+        <div class="movie-title">{{result.title}}</div>
         <div class="movie-posted-date">
-          <div *ngIf="result.year>0" class="movie-posted-date">
-            {{result.year}}
-          </div>
-          <div class="movie-category">
-            {{result.type.toUpperCase()}}
-          </div>
+          <span *ngIf="result.year > 0" class="movie-year-badge">{{result.year}}</span>
+          <span class="movie-category">{{result.type.toUpperCase()}}</span>
         </div>
         <div class="view-details">
           <button mat-raised-button (click)="onClickEvent(result)" color="primary">Watch Now</button>
@@ -30,6 +24,4 @@
       </div>
     </div>
   </div>
-
 </div>
-

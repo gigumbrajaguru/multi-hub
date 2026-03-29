@@ -2,7 +2,7 @@
 <div id="search-wrap" class="wrap-top search-wrap">
   <div class="width-search-box">
     <ul class="clearfix">
-      <li ><i class="fa fa-search"></i> <input type='search' placeholder="Upload your CV"></li>
+      <li><i class="fa fa-search"></i> <input type='search' placeholder="Upload your CV or search jobs…"></li>
       <li id="li-3"> <i class="fa fa-search"></i> </li>
       <li id="li-4"> <i class="fa fa-times"></i> </li>
     </ul>
@@ -14,48 +14,36 @@
   <div class="width">
     <ul class="clearfix">
       <li *ngFor="let tag of tags">{{tag}}</li>
-
     </ul>
-    <div id="search-results"></div>
   </div>
 </div>
 
 <div id="search-results-box">
   <div *ngFor="let result of results" class="looper">
     <div class="clear-elements">
+
       <div class="row">
         <div class="job-title">
           {{result.job_title}}
-          <div class="job-location">
-            job-location
-          </div>
+          <span class="job-type-badge">{{result.type}}</span>
         </div>
         <div class="job-posted-date">
-          job-posted-date
-          <div class="job-category">
-            job-category
-          </div>
+          {{result.date}}
+          <div class="job-category">{{result.category}}</div>
         </div>
       </div>
 
       <div class="job-skill">
-        <div class="job-simple-description">
-        </div>
-        <div class="job-type">
-        </div>
+        <span class="job-location">📍 {{result.location}}</span>
       </div>
-      <div class="row">
-        <div class="job-salary">
 
-        </div>
-
+      <div class="row" style="margin-top: 0.75rem;">
+        <div class="job-salary">{{result.salary}}</div>
         <div class="view-details">
-          <button mat-raised-button (click)="onClickEvent($event)" color="primary">View Details</button>
+          <button mat-raised-button (click)="onClickEvent(result)" color="primary">View Details</button>
         </div>
       </div>
+
     </div>
   </div>
-
 </div>
-
-

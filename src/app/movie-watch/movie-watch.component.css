@@ -1,16 +1,37 @@
-.movie-category{
-  font-weight: bold;
-  font-size: 90%;
+.movie-title {
+  font-weight: 700;
+  color: #58a6ff;
+  font-size: 1.05rem;
+  font-family: 'IBM Plex Mono', sans-serif;
+  flex: 1;
 }
-.movie-posted-date{
-  margin-left: auto;
-  margin-right: 0;
-  width: 20%;
-  font-weight: bold;
-  font-size: 90%;
+
+.movie-posted-date {
+  text-align: right;
+  white-space: nowrap;
 }
-.movie-title{
-  font-weight: bold;
-  color: rgb(165, 42, 42);
-  font-size: 100%;
+
+.movie-year-badge {
+  display: inline-block;
+  background: rgba(88, 166, 255, 0.12);
+  border: 1px solid rgba(88, 166, 255, 0.3);
+  color: #58a6ff;
+  border-radius: 100px;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.movie-category {
+  display: inline-block;
+  background: rgba(63, 185, 80, 0.12);
+  border: 1px solid rgba(63, 185, 80, 0.3);
+  color: #3fb950;
+  border-radius: 100px;
+  padding: 2px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-left: 6px;
 }
