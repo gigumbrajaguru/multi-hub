@@ -41,8 +41,13 @@ export class MovieWatchComponent implements OnInit {
     element.user_movie_name = event
     element.user_movie_year = 0
     this.searchClicked.emit(element);
-    this.videodataservice.find(element).subscribe(data_set => {
-      this.searchresults = data_set;
+    this.videodataservice.find(element).subscribe({
+      next: (data_set) => {
+        this.searchresults = data_set;
+      },
+      error: () => {
+        this.searchresults = [];
+      }
     });
 
   }
