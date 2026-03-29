@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import {environment} from "../environments/environment.prod";
+import {environment} from "../environments/environment";
 import {Observable} from "rxjs";
 import {VideoData} from "../data_class/video-data";
 

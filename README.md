@@ -1,27 +1,46 @@
-# JobFinder
+# multi-hub
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+A unified Angular dashboard that brings together multiple web apps — job search, movie discovery, and more — under a single interface.
 
-## Development server
+**Live site:** https://gigumbrajaguru.github.io/multi-hub/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **Job Search** — Browse and filter job listings with details panel
+- **Movie Watch** — Search movies and TV series by title
+- **Extensible** — News, Shop, and Research modules ready to be wired in
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tech Stack
+
+- Angular 13 + Angular Material (Deep Purple/Amber theme)
+- RxJS, FormsModule, HttpClient
+- Express.js (for Heroku deployment)
+
+## Getting Started
+
+```bash
+npm install
+ng serve          # dev server at http://localhost:4200
+```
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+# Standard production build (for Heroku / local server)
+npm run build
 
-## Running unit tests
+# GitHub Pages build — outputs to docs/ with correct base href
+npm run build:gh-pages
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Deploy to GitHub Pages
 
-## Running end-to-end tests
+1. Run `npm run build:gh-pages`
+2. Commit the generated `docs/` folder and push to `main`
+3. In repo **Settings → Pages**, set source to **main branch / docs folder**
+4. Site will be live at `https://gigumbrajaguru.github.io/multi-hub/`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Heroku Deploy
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The `heroku-postbuild` script runs `ng build --prod` automatically.
+`server.js` serves the built files via Express on `process.env.PORT`.

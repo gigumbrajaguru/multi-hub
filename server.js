@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/dist/job-finder'));
 
 app.get('/*', function(req,res) {
 
-  res.sendFile(path.join(__dirname+'/dist/job-finder/src/index.html'));
+  res.sendFile(path.join(__dirname+'/dist/job-finder/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
