@@ -4,6 +4,7 @@ import {VideoData} from "../data_class/video-data"
 
 
 @Component({
+  standalone: false,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

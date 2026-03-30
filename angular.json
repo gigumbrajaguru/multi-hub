@@ -67,6 +67,11 @@
             "github-pages": {
               "outputPath": "dist/job-finder",
               "baseHref": "/multi-hub/",
+              "optimization": {
+                "fonts": {
+                  "inline": false
+                }
+              },
               "budgets": [
                 {
                   "type": "initial",

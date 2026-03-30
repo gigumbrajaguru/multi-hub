@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-error-handler',
   templateUrl: './error-handler.component.html',
   styleUrls: ['./error-handler.component.css']
