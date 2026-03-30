@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 @Component({
+  standalone: false,
   selector: 'app-notifications-boxes',
   templateUrl: './notifications-boxes.component.html',
   styleUrls: ['./notifications-boxes.component.css']

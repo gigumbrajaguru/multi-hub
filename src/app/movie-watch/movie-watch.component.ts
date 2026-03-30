@@ -3,6 +3,7 @@ import {VideoData} from "../../data_class/video-data";
 import {MovieWatchSericeService} from "../../services/movie-watch-serice.service";
 
 @Component({
+  standalone: false,
   selector: 'app-movie-watch',
   templateUrl: './movie-watch.component.html',
   styleUrls: ['./movie-watch.component.css']

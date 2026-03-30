@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-job-search',
   templateUrl: './job-search.component.html',
   styleUrls: ['./job-search.component.css']
