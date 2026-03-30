@@ -1,20 +1,32 @@
-<div class="modal-newsletter">
-  <div id="newspaper_content" mat-dialog-content>
-    <h4 mat-dialog-title>Subscribe to our monthly newsletter</h4>
-    <mat-icon color="warn" class="icon-box">email</mat-icon>
-    <p>Join our subscriber's list to get the latest updates and articles delivered directly in your inbox.</p>
-    <form>
-      <div class="newsletter-form-field">
-        <mat-form-field class="newsletter-input">
-          <mat-label>Email</mat-label>
+<div class="detail-panel" *ngIf="event">
 
-        </mat-form-field>
-      </div>
-    </form>
+  <div class="detail-close">
+    <button mat-stroked-button color="primary">← Back</button>
   </div>
-  <div>
-    <button id="trigger_button" mat-raised-button color="primary">Subscribe</button>
-    <button id="close_button" mat-raised-button color="primary">Subscribe</button>
+
+  <h2>{{event.job_title || 'Job Details'}}</h2>
+
+  <div class="detail-row">
+    <div class="detail-field">
+      <span class="detail-label">Location</span>
+      <span class="detail-value">{{event.location || '—'}}</span>
+    </div>
+    <div class="detail-field">
+      <span class="detail-label">Salary</span>
+      <span class="detail-value">{{event.salary || '—'}}</span>
+    </div>
+    <div class="detail-field">
+      <span class="detail-label">Type</span>
+      <span class="detail-value">{{event.type || '—'}}</span>
+    </div>
+    <div class="detail-field">
+      <span class="detail-label">Category</span>
+      <span class="detail-value">{{event.category || '—'}}</span>
+    </div>
+    <div class="detail-field">
+      <span class="detail-label">Posted</span>
+      <span class="detail-value">{{event.date || '—'}}</span>
+    </div>
   </div>
+
 </div>
-

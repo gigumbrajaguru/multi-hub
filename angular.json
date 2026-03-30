@@ -65,7 +65,7 @@
               "namedChunks": true
             },
             "github-pages": {
-              "outputPath": "docs",
+              "outputPath": "dist/job-finder",
               "baseHref": "/multi-hub/",
               "budgets": [
                 {

@@ -1,8 +1,27 @@
-<app-menu-bar (selectedmenu)="componentSelector($event)"></app-menu-bar>
+<app-menu-bar #menuBar (selectedmenu)="componentSelector($event)"></app-menu-bar>
+
 <app-notifications-boxes *ngIf="notification"
                          [notificationdictionary]="notificationdictionary"></app-notifications-boxes>
-<app-detail-panel *ngIf="!deeperror && details" [event]="displayableDataset"></app-detail-panel>
-<app-job-search (eventClicked)="seeJobData($event)" *ngIf="!deeperror && searchjobs"></app-job-search>
-<app-error-handler *ngIf="deeperror" [errordictionary]="errordictionary"></app-error-handler>
-<app-movie-watch *ngIf="watchmovies" (searchClicked)="searchMovie($event)"></app-movie-watch>
 
+<!-- Home landing (default state, nothing selected yet) -->
+<div class="home-landing" *ngIf="!deeperror && !searchjobs && !watchmovies && !details">
+  <div class="home-logo"><span>./</span> multi-hub</div>
+  <p class="home-tagline">Your unified dashboard — AI job finder, movie discovery, and more. Pick a hub to get started.</p>
+  <div class="home-cards">
+    <div class="home-card" (click)="menuBar.buttonOnClick('Application', 'Application')">
+      <div class="home-card-icon">🤖</div>
+      <h3>Job Finder</h3>
+      <p>Upload your CV and let the AI crawler surface matching jobs instantly.</p>
+    </div>
+    <div class="home-card" (click)="menuBar.buttonOnClick('Movies', 'Movies')">
+      <div class="home-card-icon">🎬</div>
+      <h3>Movies</h3>
+      <p>Search any movie or TV series and start watching in seconds.</p>
+    </div>
+  </div>
+</div>
+
+<app-detail-panel *ngIf="!deeperror && details" [event]="displayableDataset"></app-detail-panel>
+<app-job-search   (eventClicked)="seeJobData($event)" *ngIf="!deeperror && searchjobs"></app-job-search>
+<app-error-handler *ngIf="deeperror" [errordictionary]="errordictionary"></app-error-handler>
+<app-movie-watch  *ngIf="watchmovies" (searchClicked)="searchMovie($event)"></app-movie-watch>
